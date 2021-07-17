@@ -25,10 +25,10 @@ export default function Prototypes() {
                     loop
                     playsInline
                     className="prototype__artwork prototype__edit"
-                    src={thumbnail}
                     style={{
                       objectFit: "contain",
                     }}
+                    src={thumbnail}
                   />
                 </div>
               </a>

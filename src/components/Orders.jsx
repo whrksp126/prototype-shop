@@ -9,7 +9,8 @@ export default function Orders() {
   // prototypes에서 찾아와야함
   const prototypes = usePrototypes();
 
-  const { remove } = useActions();
+  // 삭제 버튼을 눌렸을 때 반응하게 하기위한 함수
+  const { remove, removeAll } = useActions();
 
   const totalPrice = useMemo(() => {
     return orders
@@ -22,7 +23,7 @@ export default function Orders() {
     // orders가 변하면 다시 계산됨
   }, [orders, prototypes]);
 
-  if (orders.lenght === 0) {
+  if (orders.length === 0) {
     return (
       <aside>
         <div className="empty">
@@ -74,7 +75,17 @@ export default function Orders() {
             <div className="action">
               <div className="price">$ {totalPrice}</div>
             </div>
+            {/* 전체오더를 삭제할 수 있는 버튼 */}
+            <button className="btn btn--link" onClick={removeAll}>
+              <i className="icon icon--delete" />
+            </button>
           </div>
+          <button
+            className="btn btn--secondary"
+            style={{ width: "100%", marginTop: 10 }}
+          >
+            Chekout
+          </button>
         </div>
       </div>
     </aside>

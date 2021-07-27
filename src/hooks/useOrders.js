@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import AppStateContext from "../contexts/AppStateContext";
+import AppStateContext from "../contexts/appStateContext";
 
 export default function useOrders() {
   const { orders } = useContext(AppStateContext);
